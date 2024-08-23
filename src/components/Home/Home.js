@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Container, Row, Col, Card, Badge } from "react-bootstrap";
 import Particle from "../Particle";
-import Home2 from "./Home2";
 import Type from "./Type";
 import axios from "axios";
 

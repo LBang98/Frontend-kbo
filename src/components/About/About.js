@@ -3,7 +3,6 @@ import { Container, Row, Col } from "react-bootstrap";
 import Particle from "../Particle";
 import Techstack from "./Techstack";
 import axios from "axios";
-import Map from "./Map";
 
 class About extends Component {
     constructor(props) {
@@ -20,6 +19,7 @@ class About extends Component {
                 { name: 'Busan', temp: 0, temp_max: 0, temp_min: 0, humidity: 0, desc: '', icon: '', loading: true },
             ],
             selectedCity: null, // 선택된 도시를 추적하기 위한 상태
+            selectedStadium: null, // 선택된 경기장을 추적하기 위한 상태
         };
     }
 
@@ -49,29 +49,18 @@ class About extends Component {
         });
     }
 
-    handleCitySelect = (cityName) => {
-        this.setState({ selectedCity: cityName });
+    handleCitySelect = (cityName, stadiumName) => {
+        this.setState({ selectedCity: cityName, selectedStadium: stadiumName });
     };
 
     renderWeatherCard(city) {
-        const stadiumNames = {
-            Seoul: ['잠실야구장', '고척스카이돔'],
-            Suwon: '수원KT위즈파크',
-            Incheon: '인천SSG랜더스필드',
-            Changwon: '창원NC파크',
-            Daejeon: '한화생명이글스파크',
-            Daegu: '대구삼성라이온즈파크',
-            Gwangju: '광주기아챔피언스필드',
-            Busan: '부산사직야구장'
-        };
-
         const imgSrc = `https://openweathermap.com/img/w/${city.icon}.png`;
         if (city.loading) {
             return <p>Loading...</p>;
         } else {
             return (
-                <Col md={3} className="project-card" key={city.name}>
-                    <h4>{Array.isArray(stadiumNames[city.name]) ? stadiumNames[city.name][0] : stadiumNames[city.name]}</h4>
+                <Col md={3} className="project-card" key={this.state.selectedStadium}>
+                    <h4>{this.state.selectedStadium}</h4>
                     <div>
                         <b>{(city.temp - 273.15).toFixed(0)}°</b>
                     </div>
@@ -101,7 +90,8 @@ class About extends Component {
 
                     <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
                         <Col md={3} className="project-card">
-                            <Map/>
+
+                            <img src="" alt=""/>
                         </Col>
                         {selectedCity && this.renderWeatherCard(selectedCity)}
                     </Row>
