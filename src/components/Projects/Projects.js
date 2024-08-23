@@ -249,7 +249,7 @@ function Projects() {
 
                         {showHitters ? (
                             <div>
-                                <h2 className="text-center mb-4">Hitter Statistics</h2>
+                                <h2 className="text-center mb-4">타자 순위</h2>
                                 <Table striped bordered hover responsive>
                                     <thead>
                                     <tr>
@@ -327,7 +327,7 @@ function Projects() {
                             </div>
                         ) : (
                             <div>
-                                <h2 className="text-center mb-4">Pitcher Statistics</h2>
+                                <h2 className="text-center mb-4">투수 순위</h2>
                                 <Table striped bordered hover responsive>
                                     <thead>
                                     <tr>

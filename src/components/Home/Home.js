@@ -31,7 +31,7 @@ function Home() {
                         <Col md={5} style={{ paddingBottom: 15 }}> {/* 패딩을 줄여 전체 레이아웃 축소 */}
                             <h4 style={{ marginBottom: '15px' }}>KBO Team Rankings</h4> {/* 제목 크기와 여백 조정 */}
                             {teamRanking.map((team, index) => (
-                                <Card key={index} style={{ marginBottom: '8px', backgroundColor: '#f8f9fa', borderRadius: '8px', padding: '10px', maxWidth: '95%'}}> {/* 카드 크기 조정 */}
+                                <Card key={index} style={{ marginBottom: '8px', backgroundColor: '#f8f9fa', borderRadius: '8px', padding: '10px', maxWidth: '100%'}}> {/* 카드 크기 조정 */}
                                     <Row className="align-items-center">
                                         <Col xs={2}>
                                             <Badge pill bg="primary" style={{ fontSize: '1em' }}> {/* 폰트 크기 조정 */}
